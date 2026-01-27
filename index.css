@@ -1,4 +1,101 @@
+/* On prépare le terrain (le fond de la page) */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #e0e5ec; /* Un gris bleuté très doux */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* La boîte de la calculatrice */
 .calculator {
-  border: 1px solid black;
-  background-color: red;
+  background-color: #e0e5ec;
+  padding: 25px;
+  border-radius: 30px;
+  box-shadow:
+    20px 20px 60px #bec3c9,
+    -20px -20px 60px #ffffff;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes égales */
+  gap: 15px;
+  width: 320px;
+}
+
+/* L'écran (Display) */
+#display {
+  grid-column: span 4; /* Il prend toute la largeur */
+  background-color: #e0e5ec;
+  height: 70px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow:
+    inset 6px 6px 12px #bec3c9,
+    inset -6px -6px 12px #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 20px;
+  font-size: 2rem;
+  color: #444;
+  overflow: hidden;
+}
+
+/* Style général des boutons */
+button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Boutons tout ronds */
+  border: none;
+  background-color: #e0e5ec;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  box-shadow:
+    6px 6px 12px #bec3c9,
+    -6px -6px 12px #ffffff;
+  transition: all 0.2s ease;
+}
+
+/* Quand on appuie sur le bouton (effet d'enfoncement) */
+button:active {
+  box-shadow:
+    inset 4px 4px 8px #bec3c9,
+    inset -4px -4px 8px #ffffff;
+  transform: scale(0.95);
+}
+
+/* Le bouton "Clear" et "DEL" en haut */
+button[onclick="clearDisplay()"],
+button[onclick="deleteLast()"] {
+  grid-column: span 2; /* Ils prennent 2 cases de large */
+  width: 100%;
+  border-radius: 30px;
+  color: #ff4d4d; /* Texte en rouge */
+}
+
+/* Le bouton "=" */
+.equal {
+  background-color: #4facfe;
+  color: white;
+  box-shadow:
+    6px 6px 12px #a3b1c6,
+    -6px -6px 12px #ffffff;
+}
+
+/* Le bouton "0" en bas */
+.zero {
+  grid-column: span 2; /* Il prend 2 cases de large */
+  width: 100%;
+  border-radius: 30px;
+}
+
+/* Les opérateurs (* / + -) en couleur */
+button[onclick*="*"],
+button[onclick*="/"],
+button[onclick*="+"],
+button[onclick*="-"] {
+  color: #007bff;
 }
