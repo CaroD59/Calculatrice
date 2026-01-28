@@ -38,6 +38,12 @@ Ce projet sert de support pour apprendre à :
 
 ---
 
+## 📸 Démo du projet
+
+![Démonstration de la Calculatrice](./img/demo.gif)
+
+---
+
 ## 📜 Clause de non-responsabilité
 
 Ce projet est réalisé à **but strictement éducatif**. Il n'est pas destiné à être utilisé pour des calculs critiques
